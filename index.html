@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Add your custom CSS styles here -->
+</head>
+<body>
+    <h1 class="heading text-center display-2">Currency Converter</h1>
+    <div class="container">
+        <div class="main">
+            <div class="form-group">
+                <label for="oamount">Amount:</label>
+                <input type="number" id="oamount" placeholder="Enter amount">
+            </div>
+            <div class="form-group">
+                <label for="from">From:</label>
+                <select id="from">
+                    <!-- Populate with currency codes (e.g., USD, EUR, etc.) -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="to">To:</label>
+                <select id="to">
+                    <!-- Populate with currency codes -->
+                </select>
+            </div>
+            <button onclick="convertCurrency()">Convert</button>
+            <p id="result"></p>
+        </div>
+    </div>
+
+    <script>
+        // Fetch exchange rates from an API (e.g., exchangerate-api.com)
+        // Calculate converted amount based on user input
+        // Display result in the 'result' element
+        function convertCurrency() {
+            const amount = parseFloat(document.getElementById('oamount').value);
+            const fromCurrency = document.getElementById('from').value;
+            const toCurrency = document.getElementById('to').value;
+            // Implement your conversion logic here
+            // Example: fetch exchange rates and calculate converted amount
+            const convertedAmount = amount * 1.2; // Replace with actual conversion formula
+            document.getElementById('result').textContent = `${amount} ${fromCurrency} = ${convertedAmount.toFixed(2)} ${toCurrency}`;
+        }
+    </script>
+</body>
+</html>
